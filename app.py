@@ -22,12 +22,18 @@ if "suggestions" not in st.session_state:
     ]
 
 # Streamlit Page Configuration
-st.set_page_config(page_title="CPF Q&A Bot", page_icon=":robot_face:",
-    menu_items={
-        "Get help": None,          # Hides "Get Help" option
-        "Report a Bug": None,      # Hides "Report a Bug" option
-        "About": None              # Hides "About" option
-    })
+st.set_page_config(page_title="CPF Q&A Bot", page_icon=":robot_face:")
+
+# JavaScript for hiding the top nav bar
+hide_menu_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    header {visibility: hidden;}
+    footer {visibility: hidden;}
+    </style>
+    """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
+
 
 
 # Do not continue if check_password is not True.
