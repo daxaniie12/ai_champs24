@@ -8,12 +8,6 @@ from bs4 import BeautifulSoup
 import re
 from utility import check_password
 
-hide_github_icon = """
-#GithubIcon {
-  visibility: hidden;
-}
-"""
-st.markdown(hide_github_icon, unsafe_allow_html=True)
 
 load_dotenv()
 
@@ -29,6 +23,14 @@ if "suggestions" not in st.session_state:
 
 # Streamlit Page Configuration
 st.set_page_config(page_title="CPF Q&A Bot", page_icon=":robot_face:")
+
+hide_github_icon = """
+#GithubIcon {
+  visibility: hidden;
+}
+"""
+st.markdown(hide_github_icon, unsafe_allow_html=True)
+
 
 # Do not continue if check_password is not True.
 if not check_password():
