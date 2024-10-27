@@ -24,6 +24,16 @@ if "suggestions" not in st.session_state:
 # Streamlit Page Configuration
 st.set_page_config(page_title="CPF Q&A Bot", page_icon=":robot_face:")
 
+# CSS to hide the Streamlit header and footer
+hide_streamlit_footer = """
+    <style>
+    #MainMenu {visibility: hidden;}  /* Hides the hamburger menu */
+    footer {visibility: hidden;}  /* Hides the footer including Streamlit username link */
+    .css-1lsmgbg.e1fqkh3o3 {display: none;}  /* Hides 'Made with Streamlit' text */
+    </style>
+    """
+st.markdown(hide_streamlit_footer, unsafe_allow_html=True)
+
 
 # Do not continue if check_password is not True.
 if not check_password():
