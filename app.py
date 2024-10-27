@@ -8,8 +8,6 @@ from bs4 import BeautifulSoup
 import re
 from utility import check_password
 
-load_dotenv()
-
 hide_github_icon = """
 #GithubIcon {
   visibility: hidden;
@@ -17,6 +15,7 @@ hide_github_icon = """
 """
 st.markdown(hide_github_icon, unsafe_allow_html=True)
 
+load_dotenv()
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
