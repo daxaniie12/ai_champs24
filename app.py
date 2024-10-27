@@ -10,6 +10,14 @@ from utility import check_password
 
 load_dotenv()
 
+hide_github_icon = """
+#GithubIcon {
+  visibility: hidden;
+}
+"""
+st.markdown(hide_github_icon, unsafe_allow_html=True)
+
+
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
