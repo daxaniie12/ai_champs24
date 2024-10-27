@@ -22,14 +22,12 @@ if "suggestions" not in st.session_state:
     ]
 
 # Streamlit Page Configuration
-st.set_page_config(page_title="CPF Q&A Bot", page_icon=":robot_face:")
-
-hide_github_icon = """
-#GithubIcon {
-  visibility: hidden;
-}
-"""
-st.markdown(hide_github_icon, unsafe_allow_html=True)
+st.set_page_config(page_title="CPF Q&A Bot", page_icon=":robot_face:",
+    menu_items={
+        "Get help": None,          # Hides "Get Help" option
+        "Report a Bug": None,      # Hides "Report a Bug" option
+        "About": None              # Hides "About" option
+    })
 
 
 # Do not continue if check_password is not True.
